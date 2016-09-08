@@ -1,6 +1,6 @@
 {
   "name": "nodefest-desktop",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tokyo Nodefest 2016 in Electron",
   "main": "index.js",
   "bin": "nodefest-desktop.js",
