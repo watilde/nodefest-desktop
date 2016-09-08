@@ -1,15 +1,10 @@
 #!/usr/bin/env node
-'use strict'
 
-let exec = require('child_process').exec
-let path = require('path')
-let electron = path.resolve(__dirname, 'node_modules/.bin/electron')
+var electron = require('electron')
 
-exec(electron + ' .',  (error, stdout, stderr) => {
-  if (error) {
-    console.error(`exec error: ${error}`)
-    return
-  }
-  console.log(`stdout: ${stdout}`)
-  console.log(`stderr: ${stderr}`)
+var proc = require('child_process')
+
+var child = proc.spawn(electron, ['.'], {stdio: 'inherit'})
+child.on('close', function (code) {
+  process.exit(code)
 })
